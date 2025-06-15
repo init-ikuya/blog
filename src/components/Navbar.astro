@@ -1,0 +1,107 @@
+<nav class="navbar">
+  <div class="nav-left">
+    <a
+      href="https://github.com/init-ikuya"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://github.com/init-ikuya.png"
+        alt="init-ikuya GitHub"
+        class="github-icon"
+      />
+    </a>
+    <a href="/blog" class="blog-title">init-ikuya's Blog</a>
+  </div>
+  <div class="nav-right">
+    <a href="/blog" class="nav-link">Home</a>
+    <a href="/blog/posts" class="nav-link">Posts</a>
+    <a href="/blog/projects" class="nav-link">Projects</a>
+    <a href="/blog/contacts" class="nav-link">Contacts</a>
+    <a href="/blog/about" class="nav-link">About</a>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    width: 100%;
+    background: #111;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-family: "Comic Sans MS", "Inter", cursive, sans-serif;
+  }
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 32px;
+  }
+  .github-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #fff0f5;
+    box-shadow: 0 2px 8px #fff0f5;
+    transition: transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+  }
+  .github-icon:hover {
+    transform: rotate(-15deg) scale(1.18);
+    box-shadow: 0 4px 16px #39ff14;
+  }
+  .blog-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #39ff14;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #111;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .blog-title:hover {
+    color: #fff;
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-right: 32px;
+  }
+  .nav-link {
+    color: #39ff14;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition:
+      color 0.2s,
+      background 0.2s;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+  .nav-link:hover {
+    color: #222;
+    background: #39ff14;
+    text-shadow: 0 2px 8px #39ff14;
+  }
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      gap: 8px;
+      padding: 8px 0;
+    }
+    .nav-left,
+    .nav-right {
+      margin: 0;
+      gap: 10px;
+    }
+    .blog-title {
+      font-size: 1.1rem;
+    }
+    .github-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+</style>
