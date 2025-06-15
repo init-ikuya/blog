@@ -1,0 +1,119 @@
+---
+import Layout from "../layouts/Layout.astro";
+const allPosts = await Astro.glob("./posts/*.md");
+---
+
+<Layout>
+  <h1>Posts</h1>
+
+  <ul style={{ maxWidth: "900px", margin: "0 auto", padding: "0 12px" }}>
+    {
+      allPosts
+        .sort(
+          (a, b) =>
+            new Date(b.frontmatter.pubDate).getTime() -
+            new Date(a.frontmatter.pubDate).getTime()
+        )
+        .map((post) => (
+          <li
+            style={{
+              border: "2px solid #39ff14",
+              borderRadius: "12px",
+              padding: "16px",
+              marginBottom: "16px",
+              boxShadow: "0 0 10px #39ff14, 0 0 20px #39ff14",
+              background: "#111",
+              color: "#fff",
+              listStyle: "none",
+              transition: "transform 0.1s, box-shadow 0.1s",
+              cursor: "pointer",
+              overflow: "hidden",
+            }}
+          >
+            <a
+              href={post.url}
+              style={{
+                display: "block",
+                textDecoration: "none",
+                color: "inherit",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "24px" }}
+              >
+                {/* Left: Image */}
+                <div
+                  style={{
+                    minWidth: "120px",
+                    maxWidth: "200px",
+                    flex: "0 0 160px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {post.frontmatter.image && post.frontmatter.image.url && (
+                    <img
+                      src={post.frontmatter.image.url}
+                      alt={post.frontmatter.image.alt}
+                      style={{
+                        width: "100%",
+                        maxWidth: "180px",
+                        borderRadius: "8px",
+                        border: "1px solid #39ff14",
+                        boxShadow: "0 0 8px #39ff14",
+                      }}
+                    />
+                  )}
+                </div>
+                {/* Right: Info */}
+                <div style={{ flex: 1 }}>
+                  <p style={{ margin: 0 }}>
+                    <strong>Date:</strong>{" "}
+                    {new Date(post.frontmatter.pubDate)
+                      .toISOString()
+                      .slice(0, 10)}
+                    <br />
+                    <strong>Title:</strong> {post.frontmatter.title}
+                    <br />
+                    <strong>Description:</strong> {post.frontmatter.description}
+                    <br />
+                    {post.frontmatter.tags && (
+                      <span
+                        style={{
+                          display: "flex",
+                          gap: "8px",
+                          margin: "8px 0",
+                          flexWrap: "wrap",
+                          alignItems: "center",
+                        }}
+                      >
+                        {post.frontmatter.tags.map((tag: any) => (
+                          <span
+                            style={{
+                              background: "#222",
+                              color: "#39ff14",
+                              border: "1px solid #39ff14",
+                              borderRadius: "999px",
+                              padding: "4px 14px",
+                              fontSize: "0.9em",
+                              fontWeight: "bold",
+                              boxShadow: "0 0 6px #39ff14",
+                            }}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </span>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+    }
+  </ul>
+</Layout>
