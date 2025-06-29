@@ -38,6 +38,7 @@ const allTags = Array.from(tagSet);
     <section id="news-section" class="box">
       <h2>News & Updates</h2>
       <ul>
+        <li>2025-06-29: Launched LLM Werewolf!</li>
         <li>2025-06-16: Launched this blog!</li>
       </ul>
     </section>
@@ -85,8 +86,37 @@ const allTags = Array.from(tagSet);
       </div>
     </section>
     <section id="projects-section" class="box">
-      <h2>Projects</h2>
-      <div class="projects-coming">Coming soon...</div>
+      <div class="projects-header">
+        <h2>Projects</h2>
+        <a href="/blog/projects" class="projects-link">See more →</a>
+      </div>
+      <div class="project-item">
+        <div class="project-info">
+          <h3 class="project-name">🐺 LLM Werewolf</h3>
+          <p class="project-desc">
+            Web-based werewolf game with intelligent AI opponents
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">AI</span>
+            <span class="project-tag">Game</span>
+            <span class="project-tag">Vue.js</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a
+            href="https://init-ikuya.github.io/llm-werewolf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-demo">Demo</a
+          >
+          <a
+            href="https://github.com/init-ikuya/llm-werewolf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-github">GitHub</a
+          >
+        </div>
+      </div>
     </section>
   </div>
 </div>
@@ -237,11 +267,100 @@ const allTags = Array.from(tagSet);
   .post-title:hover {
     text-decoration: underline;
   }
-  #projects-section .projects-coming {
+  #projects-section .projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .projects-link {
     color: #39ff14;
-    font-size: 15px;
-    text-align: left;
-    margin-top: 4px;
+    font-size: 14px;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.2s;
+  }
+  .projects-link:hover {
+    color: #111827;
+    background: #39ff14;
+    border-radius: 6px;
+    padding: 2px 8px;
+  }
+  .project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    border-radius: 12px;
+    background: rgba(57, 255, 20, 0.05);
+    transition: all 0.3s ease;
+  }
+  .project-item:hover {
+    border-color: #39ff14;
+    background: rgba(57, 255, 20, 0.1);
+    transform: translateY(-2px);
+  }
+  .project-info {
+    flex: 1;
+  }
+  .project-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #39ff14;
+    margin: 0 0 6px 0;
+  }
+  .project-desc {
+    font-size: 13px;
+    color: #39ff14bb;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+  }
+  .project-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .project-tag {
+    font-size: 11px;
+    color: #39ff14;
+    background: rgba(57, 255, 20, 0.15);
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  .project-links {
+    display: flex;
+    gap: 8px;
+  }
+  .project-demo,
+  .project-github {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  .project-demo {
+    background: #39ff14;
+    color: #111827;
+  }
+  .project-demo:hover {
+    background: #fff;
+    transform: scale(1.05);
+  }
+  .project-github {
+    background: transparent;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+  }
+  .project-github:hover {
+    background: #39ff14;
+    color: #111827;
+    transform: scale(1.05);
   }
   @media screen and (max-width: 900px) {
     #main-layout {

@@ -3,7 +3,221 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <h1>Projects</h1>
+  <div class="projects-container">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-description">A showcase of my development projects 🚀</p>
 
-  Coming soon...
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header">
+          <h2 class="project-title">🐺 LLM Werewolf</h2>
+          <div class="project-badges">
+            <span class="badge">AI</span>
+            <span class="badge">Game</span>
+            <span class="badge">Vue.js</span>
+          </div>
+        </div>
+
+        <p class="project-description">
+          A web-based werewolf game where you can play against AI opponents
+          powered by OpenAI's language models. Built with modern Vue 3 stack for
+          seamless gameplay experience.
+        </p>
+
+        <div class="project-tech">
+          <strong>Tech Stack:</strong> Vue 3, TypeScript, Pinia, OpenAI API, Vite
+        </div>
+
+        <div class="project-links">
+          <a
+            href="https://init-ikuya.github.io/llm-werewolf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link demo"
+          >
+            🎮 View Demo
+          </a>
+          <a
+            href="https://github.com/init-ikuya/llm-werewolf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-link github"
+          >
+            📱 GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Placeholder for future projects -->
+      <div class="project-card placeholder">
+        <div class="project-header">
+          <h2 class="project-title">🚧 Coming Soon...</h2>
+        </div>
+        <p class="project-description">
+          More exciting projects are in development! Stay tuned ✨
+        </p>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: "Comic Sans MS", "Inter", cursive, sans-serif;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    color: #39ff14;
+    text-align: center;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 8px rgba(57, 255, 20, 0.3);
+  }
+
+  .page-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 48px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .project-card {
+    background: rgba(57, 255, 20, 0.05);
+    border: 2px solid rgba(57, 255, 20, 0.2);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    border-color: #39ff14;
+    box-shadow: 0 16px 32px rgba(57, 255, 20, 0.2);
+  }
+
+  .project-card.placeholder {
+    opacity: 0.6;
+    border-style: dashed;
+  }
+
+  .project-header {
+    margin-bottom: 20px;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    color: #39ff14;
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+
+  .project-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    background: rgba(57, 255, 20, 0.2);
+    color: #39ff14;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid rgba(57, 255, 20, 0.3);
+  }
+
+  .project-description {
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  .project-tech {
+    color: #bbb;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border-left: 4px solid #39ff14;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .project-link {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .project-link.demo {
+    background: #39ff14;
+    color: #1a1b23;
+  }
+
+  .project-link.demo:hover {
+    background: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(57, 255, 20, 0.4);
+  }
+
+  .project-link.github {
+    background: transparent;
+    color: #39ff14;
+    border-color: #39ff14;
+  }
+
+  .project-link.github:hover {
+    background: #39ff14;
+    color: #1a1b23;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .projects-container {
+      padding: 20px 16px;
+    }
+
+    .page-title {
+      font-size: 2.2rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .project-card {
+      padding: 24px;
+    }
+
+    .project-links {
+      flex-direction: column;
+    }
+
+    .project-link {
+      text-align: center;
+    }
+  }
+</style>
