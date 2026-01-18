@@ -38,6 +38,7 @@ const allTags = Array.from(tagSet);
     <section id="news-section" class="box">
       <h2>News & Updates</h2>
       <ul>
+        <li>2026-01-18: Launched AI-Driven PSD Layer Combiner!</li>
         <li>2025-06-29: Launched LLM Werewolf!</li>
         <li>2025-06-16: Launched this blog!</li>
       </ul>
@@ -90,6 +91,34 @@ const allTags = Array.from(tagSet);
         <h2>Projects</h2>
         <a href="/blog/projects" class="projects-link">See more →</a>
       </div>
+      <div class="projects-list">
+        <div class="project-item">
+        <div class="project-info">
+          <h3 class="project-name">🎨 AI-Driven PSD Layer Combiner</h3>
+          <p class="project-desc">
+            AI-powered tool that optimizes PSD layer combinations using GPT-4o
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">AI</span>
+            <span class="project-tag">Design</span>
+            <span class="project-tag">Web Tool</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a
+            href="https://init-ikuya.github.io/ai-driven-psd-layer-combiner/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-demo">Demo</a
+          >
+          <a
+            href="https://github.com/init-ikuya/ai-driven-psd-layer-combiner"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-github">GitHub</a
+          >
+        </div>
+      </div>
       <div class="project-item">
         <div class="project-info">
           <h3 class="project-name">🐺 LLM Werewolf</h3>
@@ -116,6 +145,7 @@ const allTags = Array.from(tagSet);
             class="project-github">GitHub</a
           >
         </div>
+      </div>
       </div>
     </section>
   </div>
@@ -285,6 +315,28 @@ const allTags = Array.from(tagSet);
     background: #39ff14;
     border-radius: 6px;
     padding: 2px 8px;
+  }
+  .projects-list {
+    max-height: 220px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 4px;
+  }
+  .projects-list::-webkit-scrollbar {
+    width: 6px;
+  }
+  .projects-list::-webkit-scrollbar-track {
+    background: rgba(57, 255, 20, 0.1);
+    border-radius: 3px;
+  }
+  .projects-list::-webkit-scrollbar-thumb {
+    background: #39ff14;
+    border-radius: 3px;
+  }
+  .projects-list::-webkit-scrollbar-thumb:hover {
+    background: #5fff3f;
   }
   .project-item {
     display: flex;
